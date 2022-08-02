@@ -3,7 +3,6 @@ package com.BridgeLabz.LinkedList;
 import java.util.LinkedList;
 import java.util.List;
 
-import a.LinkedLists.Node;
 
 public class LinkedLists {
 				class Node {
@@ -14,7 +13,7 @@ public class LinkedLists {
 				        this.data = data;
 				        this.next = null;
 				    }
-				}
+			}
 				  public Node head = null;    
 				  public Node tail = null; 
 				    
@@ -39,7 +38,7 @@ public class LinkedLists {
 				            System.out.println("List is empty");
 				            return;
 				        }
-				        System.out.println("Sequence of linked list: ");
+				        System.out.println("\n Sequence of linked list: ");
 				        while (current != null) {
 
 				            System.out.print(current.data + "-> ");
@@ -133,6 +132,16 @@ public class LinkedLists {
 				            System.out.println("element is absent");
 				        }
 				    }
+				    public void insertAfter(Node prev_node, int newdata) {
+				        if (prev_node == null) {
+				          System.out.println("The given previous node cannot be null");
+				          return;
+				        }
+				        Node new_node = new Node(newdata);
+				        new_node.next = prev_node.next;
+				        prev_node.next = new_node;
+				      }
+				    
 				
 					public static void main(String[] args) {
 						  LinkedLists linkedList= new LinkedLists();
@@ -140,6 +149,7 @@ public class LinkedLists {
 						 linkedList.addNode(70);							  
 						 linkedList.insert( linkedList.head, 30);
 						 linkedList.search(30);
+						 linkedList.insertAfter(linkedList.head.next, 40);
 						 						 					  
 						  linkedList.display();	  			
 					}
