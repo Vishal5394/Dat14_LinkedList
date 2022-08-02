@@ -3,6 +3,8 @@ package com.BridgeLabz.LinkedList;
 import java.util.LinkedList;
 import java.util.List;
 
+import a.LinkedLists.Node;
+
 public class LinkedLists {
 				class Node {
 				    int data;
@@ -81,12 +83,24 @@ public class LinkedLists {
 				        preNode.next = newNode;
 
 				    }
+				  void pop() {
+				        if (this.head != null) {
+
+				            Node temp = this.head;
+
+				            this.head = this.head.next;
+
+				            temp = null;
+				        }
+
+				    }
 					public static void main(String[] args) {
 						  LinkedLists linkedList= new LinkedLists();
 						 linkedList.addNode(56);
 						 linkedList.addNode(70);
 													  
 						 linkedList.insert( linkedList.head, 30);
+						 linkedList.pop();
 						 						 					  
 						  linkedList.display();	  			
 					}
