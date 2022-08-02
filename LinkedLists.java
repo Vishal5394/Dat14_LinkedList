@@ -1,6 +1,7 @@
 package com.BridgeLabz.LinkedList;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class LinkedLists {
 				class Node {
@@ -69,27 +70,25 @@ public class LinkedLists {
 					            tail = newNode;
 					        }
 					}
+				  public void insert(Node preNode, int newdata) {
+				        if (preNode == null) {
+				            System.out.println("invalid");
+				            return;
+
+				        }
+				        Node newNode = new Node(newdata);
+				        newNode.next = preNode.next;
+				        preNode.next = newNode;
+
+				    }
 					public static void main(String[] args) {
 						  LinkedLists linkedList= new LinkedLists();
-						 //linkedList.addNode(56);
-				         //linkedList.addNode(30);
-						 //linkedList.addNode(70);
-						
-						 // linkedList.addAtStart(70);
-						  //linkedList.addAtStart(30);
-						  //linkedList.addAtStart(56);
-						  
-						  linkedList.append(56);
-						  linkedList.append(30);
-						  linkedList.append(70);				  
+						 linkedList.addNode(56);
+						 linkedList.addNode(70);
+													  
+						 linkedList.insert( linkedList.head, 30);
 						 						 					  
-						  linkedList.display();
-						  
-						  
-				
-				     
-				    
-				
+						  linkedList.display();	  			
 					}
 }
 		      
