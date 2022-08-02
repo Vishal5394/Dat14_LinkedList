@@ -101,7 +101,6 @@ public class LinkedLists {
 				        if (head.next == null) {
 				            return;
 				        }
-
 				        // Find the second last node
 				        Node second_last = head;
 				        while (second_last.next.next != null)
@@ -112,12 +111,35 @@ public class LinkedLists {
 
 				        return;
 				    }
+				    public void search(Integer data) {
+				        boolean flag = false;
+				        int i = 1;
+				        Node current = head;
+				        if (head == null) {
+				            System.out.println("empty");
+				        }
+				        while (current != null) {
+				            if (current.data == data) {
+				                System.out.println("found");
+				                flag = true;
+				                break;
+				            }
+				            i++;
+				            current = current.next;
+				        }
+				        if (flag) {
+				            System.out.println("element is present at:" + i);
+				        } else {
+				            System.out.println("element is absent");
+				        }
+				    }
+				
 					public static void main(String[] args) {
 						  LinkedLists linkedList= new LinkedLists();
 						 linkedList.addNode(56);
 						 linkedList.addNode(70);							  
 						 linkedList.insert( linkedList.head, 30);
-						 linkedList.popLast();
+						 linkedList.search(30);
 						 						 					  
 						  linkedList.display();	  			
 					}
