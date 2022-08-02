@@ -2,8 +2,6 @@ package com.BridgeLabz.LinkedList;
 
 import java.util.LinkedList;
 
-import a.E.Node;
-
 public class LinkedLists {
 				class Node {
 				    int data;
@@ -60,18 +58,31 @@ public class LinkedLists {
 				            head.next = temp;
 				        }
 				    }
+				  public void append( int newdata) {
+						Node newNode = new Node(newdata);
+						 if (head == null) {
+					            head = newNode;
+					            tail = newNode;
+					        } 
+					        else {
+					            tail.next = newNode;
+					            tail = newNode;
+					        }
+					}
 					public static void main(String[] args) {
 						  LinkedLists linkedList= new LinkedLists();
 						 //linkedList.addNode(56);
 				         //linkedList.addNode(30);
 						 //linkedList.addNode(70);
-						  System.out.println("-----------------");
-						  linkedList.addAtStart(70);
-						  linkedList.addAtStart(30);
-						  linkedList.addAtStart(56);
+						
+						 // linkedList.addAtStart(70);
+						  //linkedList.addAtStart(30);
+						  //linkedList.addAtStart(56);
 						  
-						  
-						  
+						  linkedList.append(56);
+						  linkedList.append(30);
+						  linkedList.append(70);				  
+						 						 					  
 						  linkedList.display();
 						  
 						  
