@@ -162,9 +162,8 @@ public class LinkedLists {
 				      }
 				    public void sortList(){
 				        Node current = head, Position = null;
-				  
 				        int temp;
-				  
+		
 				        if (head == null) {
 				            return;
 				        }
@@ -196,7 +195,6 @@ public class LinkedLists {
 						 linkedList.search(30);
 						 linkedList.insertAfter(linkedList.head.next, 40);
 						 linkedList.display();	
-						// linkedList.deleteNode(2);
 						  linkedList.sortList();
 						 						 					  
 						  linkedList.display();	  			
