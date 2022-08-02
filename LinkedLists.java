@@ -94,13 +94,30 @@ public class LinkedLists {
 				        }
 
 				    }
+				  void popLast() {
+				        if (head == null)
+				            return;
+
+				        if (head.next == null) {
+				            return;
+				        }
+
+				        // Find the second last node
+				        Node second_last = head;
+				        while (second_last.next.next != null)
+				            second_last = second_last.next;
+
+				        // Change next of second last
+				        second_last.next = null;
+
+				        return;
+				    }
 					public static void main(String[] args) {
 						  LinkedLists linkedList= new LinkedLists();
 						 linkedList.addNode(56);
-						 linkedList.addNode(70);
-													  
+						 linkedList.addNode(70);							  
 						 linkedList.insert( linkedList.head, 30);
-						 linkedList.pop();
+						 linkedList.popLast();
 						 						 					  
 						  linkedList.display();	  			
 					}
