@@ -160,6 +160,32 @@ public class LinkedLists {
 
 				        temp.next = next;
 				      }
+				    public void sortList(){
+				        Node current = head, Position = null;
+				  
+				        int temp;
+				  
+				        if (head == null) {
+				            return;
+				        }
+				        else {
+				            while (current != null) {
+				            	Position = current.next;
+				            	  
+				                while (Position != null) {
+				                	 if (current.data > Position.data) {
+				                         temp = current.data;
+				                         current.data = Position.data;
+				                         Position.data = temp;
+				                     }
+				   
+				                	 Position = Position.next;
+				                 }
+				                 current = current.next;
+				             }
+				         }
+	                }
+			
 				    
 				
 					public static void main(String[] args) {
@@ -170,7 +196,8 @@ public class LinkedLists {
 						 linkedList.search(30);
 						 linkedList.insertAfter(linkedList.head.next, 40);
 						 linkedList.display();	
-						 linkedList.deleteNode(2);
+						// linkedList.deleteNode(2);
+						  linkedList.sortList();
 						 						 					  
 						  linkedList.display();	  			
 					}
