@@ -141,6 +141,25 @@ public class LinkedLists {
 				        new_node.next = prev_node.next;
 				        prev_node.next = new_node;
 				      }
+				    public void deleteNode(int position) {
+				        if (head == null)
+				          return;
+
+				        Node temp = head;
+
+				        if (position == 0) {
+				          head = temp.next;
+				          return;
+				        }
+				        for (int i = 0; temp != null && i < position - 1; i++)
+				          temp = temp.next;
+				        if (temp == null || temp.next == null)
+				          return;
+
+				          Node next = temp.next.next;
+
+				        temp.next = next;
+				      }
 				    
 				
 					public static void main(String[] args) {
@@ -150,6 +169,8 @@ public class LinkedLists {
 						 linkedList.insert( linkedList.head, 30);
 						 linkedList.search(30);
 						 linkedList.insertAfter(linkedList.head.next, 40);
+						 linkedList.display();	
+						 linkedList.deleteNode(2);
 						 						 					  
 						  linkedList.display();	  			
 					}
